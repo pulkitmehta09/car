@@ -1,10 +1,10 @@
 ## Table of Contents
-*[General info](#general-info)
-*[Technologies](#technologies)
-*[Setup](#setup)
-*[Visualizing Lidar output](#Visualizing-Lidar-output)
-*[Teleoperation](#Teleoperation)
-*[Publisher Subscriber](#Publisher-Subscriber)
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Visualizing Lidar output](#Visualizing-Lidar-output)
+* [Teleoperation](#Teleoperation)
+* [Publisher Subscriber](#Publisher-Subscriber)
  
 ## General info
 ROS package for a simple four wheeled steerable robot.
