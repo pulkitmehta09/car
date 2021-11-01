@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="car">
+  <link
+    name="dummy"></link>
+  <link
+    name="chassis">
+    <inertial>
+      <origin
+        xyz="-0.13485 -9.1469E-18 0.18835"
+        rpy="0 0 0" />
+      <mass
+        value="2" />
+      <inertia
+        ixx="0.61222"
+        ixy="1.6159E-16"
+        ixz="-0.25305"
+        iyy="2.4932"
+        iyz="-2.8478E-17"
+        izz="2.8529" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/chassis.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/chassis.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="fr_steer">
+    <inertial>
+      <origin
+        xyz="1.1102E-16 -2.3592E-16 0.066279"
+        rpy="0 0 0" />
+      <mass
+        value="2.5" />
+      <inertia
+        ixx="0.00057325"
+        ixy="5.6222E-21"
+        ixz="-2.1184E-20"
+        iyy="0.00057787"
+        iyz="1.8331E-18"
+        izz="5.889E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/fr_steer.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/fr_steer.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="dummy_joint" type="fixed">
+    <parent 
+      link="dummy"/>
+    <child
+      link="chassis"/>
+  </joint>
+  <joint
+    name="fr_steer_joint"
+    type="revolute">
+    <origin
+      xyz="0.254 -0.1016 0.0762"
+      rpy="0 0 0" />
+    <parent
+      link="chassis" />
+    <child
+      link="fr_steer" />
+    <axis
+      xyz="0 0 1" />
+    <dynamics damping="0.0" friction="0.2"/>
+    <limit
+      lower="-0.3"
+      upper="0.3"
+      effort="10"
+      velocity="2" />
+  </joint>
+  <link
+    name="fr_wheel">
+    <inertial>
+      <origin
+        xyz="4.9960036108132E-16 -0.102984687357304 -5.55111512312578E-16"
+        rpy="0 0 0" />
+      <mass
+        value="5" />
+      <inertia
+        ixx="0.00370331781747774"
+        ixy="1.17621414918156E-17"
+        ixz="3.38813178901719E-18"
+        iyy="0.00537192330717602"
+        iyz="4.10369674866038E-18"
+        izz="0.00370331781747774" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/fr_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/fr_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.0254"
+      rpy="0 0 0" />
+    <parent
+      link="fr_steer" />
+    <child
+      link="fr_wheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="fl_steer">
+    <inertial>
+      <origin
+        xyz="-1.1102E-16 -2.498E-16 0.066279"
+        rpy="0 0 0" />
+      <mass
+        value="2.5" />
+      <inertia
+        ixx="0.00057325"
+        ixy="-5.3896E-21"
+        ixz="-4.3522E-20"
+        iyy="0.00057787"
+        iyz="1.8529E-18"
+        izz="5.889E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/fl_steer.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/fl_steer.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_steer_joint"
+    type="revolute">
+    <origin
+      xyz="0.254 0.1016 0.0762"
+      rpy="0 0 0" />
+    <parent
+      link="chassis" />
+    <child
+      link="fl_steer" />
+    <axis
+      xyz="0 0 1" />
+    <dynamics damping="0.0" friction="0.2"/>
+    <limit
+      lower="-0.3"
+      upper="0.3"
+      effort="10"
+      velocity="2" />
+  </joint>
+  <link
+    name="fl_wheel">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-16 0.102984687357303 1.30451205393456E-15"
+        rpy="0 0 0" />
+      <mass
+        value="5" />
+      <inertia
+        ixx="0.00370331781747775"
+        ixy="-1.10238315578472E-17"
+        ixz="-3.47105664542567E-18"
+        iyy="0.00537192330717602"
+        iyz="1.57715153459685E-17"
+        izz="0.00370331781747774" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/fl_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/fl_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.0254"
+      rpy="0 0 0" />
+    <parent
+      link="fl_steer" />
+    <child
+      link="fl_wheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="rear_axle">
+    <inertial>
+      <origin
+        xyz="5.5511E-17 1.8534E-16 2.0817E-16"
+        rpy="0 0 0" />
+      <mass
+        value="5" />
+      <inertia
+        ixx="0.077136"
+        ixy="2.0735E-16"
+        ixz="-4.0232E-19"
+        iyy="0.010745"
+        iyz="-1.6136E-16"
+        izz="0.077136" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/rear_axle.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/rear_axle.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_axle_joint"
+    type="continuous">
+    <origin
+      xyz="-0.254 0 0.1016"
+      rpy="0 0 0" />
+    <parent
+      link="chassis" />
+    <child
+      link="rear_axle" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <transmission name="fr_steer">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fr_steer_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="fl_steer">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fl_steer_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="rear_axle">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rear_axle_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="fr_wheel">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fr_wheel_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="fl_wheel">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fl_wheel_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor5">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+</robot>

@@ -1,0 +1,62 @@
+
+
+--Copy the package "car" to catkin_ws/src.
+
+--Open catkin_ws in a new terminal and run the below commands:
+
+catkin_make clean && catkin_make
+source ~/catkin_ws/devel/setup.bash
+
+
+-------------------------------------Checking the Lidar output---------------------------------------
+
+--Launch the model into the competition_arena world, in a new terminal run:
+
+roslaunch car template_launch.launch
+
+--In a new terminal run:
+
+rviz
+
+-- Add the Laser sensor and in the Topic menu select: /car/scan
+
+
+ 
+-----------------------------------------------Teleop------------------------------------------------
+
+--Open terminal and run:
+
+roscore
+
+--Launch the model into the competition_arena world, in a new terminal run:
+
+roslaunch car template_launch.launch
+
+--In a new terminal run the below commands and follow the instructions in the terminal to control the model:
+
+cd ~/catkin_ws/src/car
+python3 teleop_template.py
+
+
+
+
+-----------------------------------------Publisher-Subscriber--------------------------------------
+
+--Open a new terminal and run:
+
+roscore
+
+--Launch the model into the competition_arena world, in a new terminal run:
+
+roslaunch car template_emptyworld.launch
+
+--To run the publisher, run the following in a new terminal:
+
+cd ~/catkin_ws/src/car/scripts
+python3 pub.py
+
+
+--To run the subscriber, run the following in a new terminal:
+
+cd ~/catkin_ws/src/car/scripts
+python3 sub.py
